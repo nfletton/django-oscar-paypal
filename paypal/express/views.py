@@ -368,7 +368,7 @@ class SuccessResponseView(PaymentDetailsView):
             session_method = super(SuccessResponseView, self).get_shipping_method(
                 basket, shipping_address, **kwargs)
             if session_method:
-                method.name = session_method.name
+                method = session_method
         else:
             method.name = name
         return method
